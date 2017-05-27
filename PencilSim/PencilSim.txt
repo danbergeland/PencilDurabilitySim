@@ -1,0 +1,1 @@
+./Debug/Paper.cpp.o ./Debug/PaperTest.cpp.o ./Debug/PencilTest.cpp.o
