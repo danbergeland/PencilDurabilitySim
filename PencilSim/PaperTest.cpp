@@ -3,13 +3,8 @@
 #include <string>
 #include "Paper.h"
 
-TEST_CASE("Write Strings to Paper","[paper]")
-{
-    Paper p;
-    REQUIRE(p.write("abc")==3);
-}
 
-TEST_CASE("Read returns written text","[paper]")
+TEST_CASE("Read and write update text","[paper]")
 {
     Paper p;
     p.write("abc");
@@ -65,4 +60,16 @@ TEST_CASE("Write_at obscures letters","[paper]")
     p.write(" BC   ");
     p.write_at(0,"Post");
     REQUIRE(p.read() == "P@@t  ");
+    
+    /*
+     * For example, writing "artichoke" in the middle of 
+     * "An       a day keeps the doctor away" would result in 
+     * "An artich@k@ay keeps the doctor away".
+     */
+    
+    Paper p2;
+    p2.write("An       a day keeps the doctor away");
+    p2.write_at(3,"artichoke");
+    REQUIRE(p2.read() == "An artich@k@ay keeps the doctor away");
+    
 }

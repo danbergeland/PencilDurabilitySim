@@ -60,7 +60,7 @@ AS       := /usr/bin/as
 ## User defined environment variables
 ##
 CodeLiteDir:=/usr/share/codelite
-Objects0=$(IntermediateDirectory)/Paper.cpp$(ObjectSuffix) $(IntermediateDirectory)/PaperTest.cpp$(ObjectSuffix) $(IntermediateDirectory)/PencilTest.cpp$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/Paper.cpp$(ObjectSuffix) $(IntermediateDirectory)/PaperTest.cpp$(ObjectSuffix) $(IntermediateDirectory)/PencilTest.cpp$(ObjectSuffix) $(IntermediateDirectory)/Pencil.cpp$(ObjectSuffix) 
 
 
 
@@ -114,6 +114,14 @@ $(IntermediateDirectory)/PencilTest.cpp$(DependSuffix): PencilTest.cpp
 
 $(IntermediateDirectory)/PencilTest.cpp$(PreprocessSuffix): PencilTest.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/PencilTest.cpp$(PreprocessSuffix) PencilTest.cpp
+
+$(IntermediateDirectory)/Pencil.cpp$(ObjectSuffix): Pencil.cpp $(IntermediateDirectory)/Pencil.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/dan/Documents/PencilSim/PencilSim/Pencil.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Pencil.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/Pencil.cpp$(DependSuffix): Pencil.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/Pencil.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/Pencil.cpp$(DependSuffix) -MM Pencil.cpp
+
+$(IntermediateDirectory)/Pencil.cpp$(PreprocessSuffix): Pencil.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Pencil.cpp$(PreprocessSuffix) Pencil.cpp
 
 
 -include $(IntermediateDirectory)/*$(DependSuffix)

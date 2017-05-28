@@ -13,7 +13,7 @@ public:
     /*
      * Add letters to the paper at the end of existing text
      */ 
-    int write(std::string letters);
+    void write(std::string letters);
     
     /*
      * Get the current text on the paper

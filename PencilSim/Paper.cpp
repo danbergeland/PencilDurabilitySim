@@ -10,10 +10,9 @@ Paper::~Paper()
 {
 }
 
-int Paper::write(std::string letters)
+void Paper::write(std::string letters)
 {
     text.append(letters);
-    return letters.length();
 }
 
 std::string Paper::read()
