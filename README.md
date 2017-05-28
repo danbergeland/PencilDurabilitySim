@@ -14,8 +14,10 @@ Clone the repository.
 To compile and build:  
 
 Open a terminal for the root directory of the repository. 
-I provided a shell script that contains the necessary make command "./build.sh"
-Run build.sh, or make -f Makefile
+
+First, run the "getCatch.sh" script.  This clones the Catch test framework into the source directory.
+
+After Catch has been added, run "./build.sh" or make -f Makefile
 
 The built program will be placed at PencilSim/Debug/PencilSim relative to the repository root.
 
@@ -31,13 +33,13 @@ I built this in Ubuntu 16.04, using the Codelite IDE.  The codelite workspace an
 
 g++ compiler 5.4.0
 
-Catch (included in the repository) https://github.com/philsquared/Catch
+Catch  https://github.com/philsquared/Catch
 
 make 4.1
 
 ## Summary:
 
-I chose to use C++, with the low overhead Catch test framework (included in the repository).  
+I chose to use C++, with the low overhead Catch test framework.  
 While I'm familiar with the concept of unit testing and TDD, it's not something I've done regularly on prior work; the choice of Catch was somewhat arbitrary since I don't have a preferred framework.
 
 This project used test driven development (TDD) to develop classes to represent a pencil writing on paper.  
