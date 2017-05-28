@@ -23,7 +23,7 @@ Run build.sh, or make -f Makefile
 
 ## Dependencies:
 
-I built this in Ubuntu 16.04
+I built this in Ubuntu 16.04, using the Codelite IDE.  The codelite workspace and project settings are in included, but not needed to build or run.
 
 g++ compiler 5.4.0
 
