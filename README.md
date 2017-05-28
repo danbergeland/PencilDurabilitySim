@@ -9,11 +9,7 @@ https://github.com/PillarTechnology/kata-pencil-durability
 
 ## Instructions:
 
-Clone the repository.  To run the tests (already compiled), use "cd debug && ./PencilSim".  
-Remember to chmod PencilSim such that it's allowed to run as an executable.
-
-Catch also provides some command line arguments.  To see the list of tests use the -l flag "./PencilSim -l".  
-It also has a -t tag flag that shows how many test cases for the different tags.  This project has tags for pencil and paper.
+Clone the repository.  
 
 To compile and build:  
 
@@ -21,9 +17,17 @@ Open a terminal for the root directory of the repository.
 I provided a shell script that contains the necessary make command "./build.sh"
 Run build.sh, or make -f Makefile
 
+The built program will be placed at PencilSim/Debug/PencilSim relative to the repository root.
+
+To run the tests (already compiled), use "cd PencilSim/Debug && ./PencilSim".  
+Remember to chmod PencilSim such that it's allowed to run as an executable.
+
+Catch also provides some command line arguments.  To see the list of tests use the -l flag "./PencilSim -l".  
+It also has a -t tag flag that shows how many test cases for the different tags.
+
 ## Dependencies:
 
-I built this in Ubuntu 16.04
+I built this in Ubuntu 16.04, using the Codelite IDE.  The codelite workspace and project settings are in included, but not needed to build or run.
 
 g++ compiler 5.4.0
 
