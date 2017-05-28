@@ -1,7 +1,7 @@
 #/bin/bash
 
-repository="https://github.com/philsquared/Catch"
+repo="https://github.com/philsquared/Catch"
 
-localFolder="./PencilSim/Catch2"
+target="./PencilSim/Catch"
 
-git clone "$repository" "$localFolder"
+git clone "$repo" "$target"
