@@ -1,0 +1,4 @@
+PencilSim/Catch
+PencilSim/Debug/*.o*
+.clang
+.codelite

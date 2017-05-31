@@ -21,12 +21,27 @@ TEST_CASE("Clear_at turns letters to spaces","[paper]")
     //Writing resumes at end of white space
     p.write("after");
     REQUIRE(p.read().compare("     after")==0);
+
+
+}
+
+TEST_CASE("clear_at only works in existing range", "[paper]")
+{
+    Paper p;
+    p.write("space");
     //Clear with negative index doesn't work
     p.clear_at(-1,3);
-    REQUIRE(p.read().compare("     after")==0);
+    REQUIRE(p.read().compare("space")==0);
+}
+
+
+TEST_CASE("clear_at can't extend text","[paper]")
+{
+    Paper p;
+    p.write("space");
     //Clear beyond text length doesn't work
     p.clear_at(0,20);
-    REQUIRE(p.read().compare("     after")==0);
+    REQUIRE(p.read().compare("space")==0);
 }
 
 TEST_CASE("Write_at overwrites spaces","[paper]")
@@ -42,9 +57,7 @@ TEST_CASE("Write_at overwrites spaces","[paper]")
     p.write_at(0,"lis");
     REQUIRE(p.read() == "list ");
     
-    //Don't allow writing to negative index
-    p.write_at(-1,"lis");
-    REQUIRE(p.read() == "list ");
+
     
     //Don't allow using "write_at" beyond existing text space
     p.write_at(0,"Listening");
@@ -52,6 +65,15 @@ TEST_CASE("Write_at overwrites spaces","[paper]")
     //Don't allow indexing beyond existing text
     p.write_at(30,"list");
     REQUIRE(p.read()=="list ");    
+}
+
+TEST_CASE("write_at can't write to negative index","[paper]")
+{
+    Paper p;
+    p.write("list ");
+      //Don't allow writing to negative index
+    p.write_at(-1,"lis");
+    REQUIRE(p.read() == "list ");
 }
 
 TEST_CASE("Write_at obscures letters","[paper]")

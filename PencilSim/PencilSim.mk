@@ -5,16 +5,16 @@
 ## Debug
 ProjectName            :=PencilSim
 ConfigurationName      :=Debug
-WorkspacePath          :=/home/dan/Documents/PencilSim
-ProjectPath            :=/home/dan/Documents/PencilSim/PencilSim
+WorkspacePath          := "/home/dan/Documents/PencilDurabilitySim"
+ProjectPath            := "/home/dan/Documents/PencilDurabilitySim/PencilSim"
 IntermediateDirectory  :=./Debug
 OutDir                 := $(IntermediateDirectory)
 CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
 User                   :=Dan
-Date                   :=28/05/17
-CodeLitePath           :=/home/dan/.codelite
+Date                   :=31/05/17
+CodeLitePath           :="/home/dan/.codelite"
 LinkerName             :=/usr/bin/g++
 SharedObjectLinkerName :=/usr/bin/g++ -shared -fPIC
 ObjectSuffix           :=.o
@@ -92,36 +92,36 @@ PreBuild:
 ## Objects
 ##
 $(IntermediateDirectory)/Paper.cpp$(ObjectSuffix): Paper.cpp $(IntermediateDirectory)/Paper.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/dan/Documents/PencilSim/PencilSim/Paper.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Paper.cpp$(ObjectSuffix) $(IncludePath)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/dan/Documents/PencilDurabilitySim/PencilSim/Paper.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Paper.cpp$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/Paper.cpp$(DependSuffix): Paper.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/Paper.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/Paper.cpp$(DependSuffix) -MM Paper.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/Paper.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/Paper.cpp$(DependSuffix) -MM "Paper.cpp"
 
 $(IntermediateDirectory)/Paper.cpp$(PreprocessSuffix): Paper.cpp
-	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Paper.cpp$(PreprocessSuffix) Paper.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Paper.cpp$(PreprocessSuffix) "Paper.cpp"
 
 $(IntermediateDirectory)/PaperTest.cpp$(ObjectSuffix): PaperTest.cpp $(IntermediateDirectory)/PaperTest.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/dan/Documents/PencilSim/PencilSim/PaperTest.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/PaperTest.cpp$(ObjectSuffix) $(IncludePath)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/dan/Documents/PencilDurabilitySim/PencilSim/PaperTest.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/PaperTest.cpp$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/PaperTest.cpp$(DependSuffix): PaperTest.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/PaperTest.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/PaperTest.cpp$(DependSuffix) -MM PaperTest.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/PaperTest.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/PaperTest.cpp$(DependSuffix) -MM "PaperTest.cpp"
 
 $(IntermediateDirectory)/PaperTest.cpp$(PreprocessSuffix): PaperTest.cpp
-	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/PaperTest.cpp$(PreprocessSuffix) PaperTest.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/PaperTest.cpp$(PreprocessSuffix) "PaperTest.cpp"
 
 $(IntermediateDirectory)/PencilTest.cpp$(ObjectSuffix): PencilTest.cpp $(IntermediateDirectory)/PencilTest.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/dan/Documents/PencilSim/PencilSim/PencilTest.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/PencilTest.cpp$(ObjectSuffix) $(IncludePath)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/dan/Documents/PencilDurabilitySim/PencilSim/PencilTest.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/PencilTest.cpp$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/PencilTest.cpp$(DependSuffix): PencilTest.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/PencilTest.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/PencilTest.cpp$(DependSuffix) -MM PencilTest.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/PencilTest.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/PencilTest.cpp$(DependSuffix) -MM "PencilTest.cpp"
 
 $(IntermediateDirectory)/PencilTest.cpp$(PreprocessSuffix): PencilTest.cpp
-	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/PencilTest.cpp$(PreprocessSuffix) PencilTest.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/PencilTest.cpp$(PreprocessSuffix) "PencilTest.cpp"
 
 $(IntermediateDirectory)/Pencil.cpp$(ObjectSuffix): Pencil.cpp $(IntermediateDirectory)/Pencil.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/dan/Documents/PencilSim/PencilSim/Pencil.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Pencil.cpp$(ObjectSuffix) $(IncludePath)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/dan/Documents/PencilDurabilitySim/PencilSim/Pencil.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Pencil.cpp$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/Pencil.cpp$(DependSuffix): Pencil.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/Pencil.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/Pencil.cpp$(DependSuffix) -MM Pencil.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/Pencil.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/Pencil.cpp$(DependSuffix) -MM "Pencil.cpp"
 
 $(IntermediateDirectory)/Pencil.cpp$(PreprocessSuffix): Pencil.cpp
-	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Pencil.cpp$(PreprocessSuffix) Pencil.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Pencil.cpp$(PreprocessSuffix) "Pencil.cpp"
 
 
 -include $(IntermediateDirectory)/*$(DependSuffix)
