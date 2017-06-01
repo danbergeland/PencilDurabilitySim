@@ -1,1 +1,1 @@
-make -e -f Makefile
+make -f MakefileBuild

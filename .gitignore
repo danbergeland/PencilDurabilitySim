@@ -1,4 +1,10 @@
 PencilSim/Catch
-PencilSim/Debug/*.o*
+*.o*
+*.d*
+PencilSim/PencilSim.mk
+Makefile
+*.project
 .clang
 .codelite
+PencilSim.workspace
+.Makefile.swp
