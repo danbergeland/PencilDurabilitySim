@@ -26,7 +26,7 @@ Pencil::Pencil(double durability, double length_cm)
 
 Pencil::Pencil(double durability, double length_cm, double eraser_life)
 {
-    durability_ = durability_;
+    durability_ = durability;
     default_durability_ = durability_;
     length_cm_ = length_cm;
     sharpen_length_reduction_ = 1.0;
