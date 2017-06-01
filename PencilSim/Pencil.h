@@ -5,33 +5,10 @@
 
 class Pencil
 {
-private:
-    double length_cm;
-    double durability;
-    
-    double eraser_life;
-    
-    double default_durability;
-    double sharpen_length_reduction;
-    
-    double lower_case_durability_cost;
-    double upper_case_durability_cost;
-    
-    /*
-     * Removes durability based on case of the character
-     */
-    void updateDurability(char c);
-    
-    /*
-    * Returns how many more times it can be sharpened
-    */
-    
-    int get_remaining_sharpens();
-    
 public:
     Pencil();
-    Pencil(double durability, double length_cm);
-    Pencil(double durability, double length_cm, double eraser_life);
+    Pencil(double durability_, double length_cm_);
+    Pencil(double durability_, double length_cm_, double eraser_life_);
     ~Pencil();
     
     /*
@@ -52,10 +29,32 @@ public:
     void erase(std::string letters, Paper &p);
     
     /*
-     * 
+     * Start writing into a blank space at 'start_position'
      */
      void edit(unsigned int start_position, std::string letters, Paper &p);
-
+     
+private:
+    double length_cm_;
+    double durability_;
+    
+    double eraser_life_;
+    
+    double default_durability_;
+    double sharpen_length_reduction_;
+    
+    double lower_case_durability_cost_;
+    double upper_case_durability_cost_;
+    
+    /*
+     * Removes durability based on case of the character
+     */
+    void updateDurability(char c);
+    
+    /*
+    * Returns how many more times it can be sharpened
+    */
+    
+    int get_remaining_sharpens();
 };
 
 #endif // PENCIL_H

@@ -30,7 +30,8 @@ TEST_CASE("clear_at only works in existing range", "[paper]")
     Paper p;
     p.write("space");
     //Clear with negative index doesn't work
-    p.clear_at(-1,3);
+    unsigned int i = -1;
+    p.clear_at(i,3);
     REQUIRE(p.read().compare("space")==0);
 }
 

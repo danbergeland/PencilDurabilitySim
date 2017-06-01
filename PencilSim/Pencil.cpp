@@ -4,35 +4,35 @@
 
 Pencil::Pencil()
 {
-    durability = 1000;
-    default_durability = durability;
-    length_cm = 20;
-    sharpen_length_reduction = 1.0;
-    lower_case_durability_cost=1.0;
-    upper_case_durability_cost=2.0;
-    eraser_life = 200;
+    durability_ = 1000;
+    default_durability_ = durability_;
+    length_cm_ = 20;
+    sharpen_length_reduction_ = 1.0;
+    lower_case_durability_cost_=1.0;
+    upper_case_durability_cost_=2.0;
+    eraser_life_ = 200;
 }
 
 Pencil::Pencil(double durability, double length_cm)
 {
-    this->durability = durability;
-    default_durability = durability;
-    this->length_cm = length_cm;
-    sharpen_length_reduction = 1.0;
-    lower_case_durability_cost=1.0;
-    upper_case_durability_cost=2.0;
-    eraser_life = 200;
+    durability_ = durability;
+    default_durability_ = durability_;
+    length_cm_ = length_cm;
+    sharpen_length_reduction_ = 1.0;
+    lower_case_durability_cost_=1.0;
+    upper_case_durability_cost_=2.0;
+    eraser_life_ = 200;
 }
 
 Pencil::Pencil(double durability, double length_cm, double eraser_life)
 {
-    this->durability = durability;
-    default_durability = durability;
-    this->length_cm = length_cm;
-    sharpen_length_reduction = 1.0;
-    lower_case_durability_cost=1.0;
-    upper_case_durability_cost=2.0;
-    this->eraser_life = eraser_life;
+    durability_ = durability_;
+    default_durability_ = durability_;
+    length_cm_ = length_cm;
+    sharpen_length_reduction_ = 1.0;
+    lower_case_durability_cost_=1.0;
+    upper_case_durability_cost_=2.0;
+    eraser_life_ = eraser_life;
     
 }
 
@@ -44,14 +44,14 @@ void Pencil::sharpen()
 {
     if(get_remaining_sharpens())
     {
-        length_cm -= sharpen_length_reduction;
-        durability = default_durability;
+        length_cm_ -= sharpen_length_reduction_;
+        durability_ = default_durability_;
     }
 }
 
 int Pencil::get_remaining_sharpens()
 {
-    return int(floor(length_cm / sharpen_length_reduction));
+    return int(floor(length_cm_ / sharpen_length_reduction_));
 }
 
 void Pencil::write(std::string letters, Paper &p)
@@ -61,7 +61,7 @@ void Pencil::write(std::string letters, Paper &p)
     for(unsigned int i = 0; i<letters.length(); i++)
     {
         char l = letters.at(i);
-        if((isupper(l)&&durability<upper_case_durability_cost) || (islower(l)&&durability<lower_case_durability_cost))
+        if((isupper(l)&&durability_<upper_case_durability_cost_) || (islower(l)&&durability_<lower_case_durability_cost_))
             letters.replace(i,1,1,' ');
             
         updateDurability(l);
@@ -73,13 +73,13 @@ void Pencil::updateDurability(char c)
 {
     //only reduce durability for upper and lower case characters
     if(isupper(c)) 
-        durability -= upper_case_durability_cost;
+        durability_ -= upper_case_durability_cost_;
     
     if(islower(c)) 
-        durability -= lower_case_durability_cost;
+        durability_ -= lower_case_durability_cost_;
     
-    if(durability<=0) 
-        durability = 0;
+    if(durability_<=0) 
+        durability_ = 0;
 }
 
 void Pencil::erase(std::string letters, Paper &p)
@@ -89,10 +89,10 @@ void Pencil::erase(std::string letters, Paper &p)
     unsigned int end = start + letters.length();
     for(unsigned int i=0;i<letters.length();i++)
     {
-        if(!isspace(p.read().at(end-i)) && eraser_life>0)
+        if(!isspace(p.read().at(end-i)) && eraser_life_>0)
         {
             p.clear_at(end-i,1);
-            eraser_life -= 1;
+            eraser_life_ -= 1;
         }
     }
     
@@ -103,7 +103,7 @@ void Pencil::edit(unsigned int start_position, std::string letters, Paper &p)
     for(unsigned int i = 0; i<letters.length(); i++)
     {
         char l = letters.at(i);
-        if((isupper(l)&&durability<upper_case_durability_cost) || (islower(l)&&durability<lower_case_durability_cost))
+        if((isupper(l)&&durability_<upper_case_durability_cost_) || (islower(l)&&durability_<lower_case_durability_cost_))
             letters.replace(i,1,1,' ');
             
         updateDurability(l);

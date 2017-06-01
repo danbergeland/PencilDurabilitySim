@@ -23,7 +23,7 @@ std::string Paper::read()
 void Paper::clear_at(unsigned int index,unsigned int clear_length)
 {
     //check in range, positive number, and won't add length
-    if (index + clear_length <= text_.length() && index >= 0)
+    if (index + clear_length <= text_.length() && index < text_.length())
     {
         text_.replace(index,clear_length,clear_length,' ');
     }
@@ -32,7 +32,7 @@ void Paper::clear_at(unsigned int index,unsigned int clear_length)
 void Paper::write_at(unsigned int index, std::string letters)
 {
     //check range
-    if(index+letters.length() <= text_.length() && index>=0)
+    if(index+letters.length() <= text_.length()  && index < text_.length())
     {
         //step through each letter in the index
         for(unsigned int i=0;i<letters.length();i++)
