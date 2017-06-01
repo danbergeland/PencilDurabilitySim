@@ -58,13 +58,7 @@ TEST_CASE("Write_at overwrites spaces","[paper]")
     REQUIRE(p.read() == "list ");
     
 
-    
-    //Don't allow using "write_at" beyond existing text space
-    p.write_at(0,"Listening");
-    REQUIRE(p.read()=="list ");
-    //Don't allow indexing beyond existing text
-    p.write_at(30,"list");
-    REQUIRE(p.read()=="list ");    
+
 }
 
 TEST_CASE("write_at can't write to negative index","[paper]")
@@ -74,6 +68,25 @@ TEST_CASE("write_at can't write to negative index","[paper]")
       //Don't allow writing to negative index
     p.write_at(-1,"lis");
     REQUIRE(p.read() == "list ");
+}
+
+TEST_CASE("write_at can't extend existing text","[paper]")
+{
+      Paper p;
+    p.write("list ");
+        
+    //Don't allow using "write_at" beyond existing text space
+    p.write_at(0,"Listening");
+    REQUIRE(p.read()=="list ");
+}
+
+TEST_CASE("write_at can't write to index beyond text space","[paper]")
+{
+   Paper p;
+    p.write("list ");
+    //Don't allow indexing beyond existing text
+    p.write_at(30,"list");
+    REQUIRE(p.read()=="list ");    
 }
 
 TEST_CASE("Write_at obscures letters","[paper]")

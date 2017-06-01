@@ -58,7 +58,7 @@ void Pencil::write(std::string letters, Paper &p)
 {
     //reduce durability for each letter
     //if durability is too low, replace the letter with a string
-    for(int i = 0; i<letters.length(); i++)
+    for(unsigned int i = 0; i<letters.length(); i++)
     {
         char l = letters.at(i);
         if((isupper(l)&&durability<upper_case_durability_cost) || (islower(l)&&durability<lower_case_durability_cost))
@@ -86,8 +86,8 @@ void Pencil::erase(std::string letters, Paper &p)
 {
     //Finds the last position in the matching text
     int start = p.read().rfind(letters)-1;
-    int end = start + letters.length();
-    for(int i=0;i<letters.length();i++)
+    unsigned int end = start + letters.length();
+    for(unsigned int i=0;i<letters.length();i++)
     {
         if(!isspace(p.read().at(end-i)) && eraser_life>0)
         {
@@ -98,9 +98,9 @@ void Pencil::erase(std::string letters, Paper &p)
     
 }
 
-void Pencil::edit(int start_position, std::string letters, Paper &p)
+void Pencil::edit(unsigned int start_position, std::string letters, Paper &p)
 {
-    for(int i = 0; i<letters.length(); i++)
+    for(unsigned int i = 0; i<letters.length(); i++)
     {
         char l = letters.at(i);
         if((isupper(l)&&durability<upper_case_durability_cost) || (islower(l)&&durability<lower_case_durability_cost))

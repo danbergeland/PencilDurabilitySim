@@ -54,7 +54,7 @@ public:
     /*
      * 
      */
-     void edit(int start_position, std::string letters, Paper &p);
+     void edit(unsigned int start_position, std::string letters, Paper &p);
 
 };
 

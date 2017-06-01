@@ -11,12 +11,18 @@ TEST_CASE("Pencil writes","[pencil]")
     pe.write("abc",p);
     REQUIRE(p.read()=="abc");
     
-    /*
+
+}
+
+TEST_CASE("Pencil writes Requirement","[pencil]")
+{
+      /*
      * Text written by the pencil should always be appended to existing text on the paper. 
      * Thus, given a piece of paper with the text "She sells sea shells", 
      * when a pencil is instructed to write " down by the sea shore" on the paper, 
      * the paper will then contain the entire string.
      */
+    Pencil pe;
     Paper p2;
     pe.write("Sally sells sea shells",p2);
     pe.write(" down by the sea shore.",p2);
