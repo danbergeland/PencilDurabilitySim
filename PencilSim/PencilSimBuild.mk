@@ -1,11 +1,14 @@
 #make file for Pencil Sim tests
-OutputFile := PencilSim
+OutputFile := ./Debug/PencilSim
 CC = g++ -Wall
 INC = -I./Catch/include/
 BUILDDIR = ./Debug/
 OFILES = PaperTest.o PencilTest.o Paper.o Pencil.o
 
-all: $(OutputFile) 
+all: directory $(OutputFile) 
+
+directory : 
+	mkdir -p $(BUILDDIR)
 
 $(OutputFile) : $(OFILES)
 	$(CC) $(OFILES) -o $(OutputFile) $(INC)
