@@ -3,7 +3,7 @@
 Paper::Paper()
 {
     //Init with a blank paper
-    text = "";
+    text_ = "";
 }
 
 Paper::~Paper()
@@ -12,27 +12,27 @@ Paper::~Paper()
 
 void Paper::write(std::string letters)
 {
-    text.append(letters);
+    text_.append(letters);
 }
 
 std::string Paper::read()
 {
-    return text;
+    return text_;
 }
 
 void Paper::clear_at(unsigned int index,unsigned int clear_length)
 {
     //check in range, positive number, and won't add length
-    if (index + clear_length <= text.length() && index >= 0)
+    if (index + clear_length <= text_.length() && index >= 0)
     {
-        text.replace(index,clear_length,clear_length,' ');
+        text_.replace(index,clear_length,clear_length,' ');
     }
 }
 
 void Paper::write_at(unsigned int index, std::string letters)
 {
     //check range
-    if(index+letters.length() <= text.length() && index>=0)
+    if(index+letters.length() <= text_.length() && index>=0)
     {
         //step through each letter in the index
         for(unsigned int i=0;i<letters.length();i++)
@@ -44,13 +44,13 @@ void Paper::write_at(unsigned int index, std::string letters)
 
 void Paper::add_letter(int index, char letter)
 {
-  if(text.at(index)==' ')
+  if(text_.at(index)==' ')
   {
-      text.replace(index,1,1,letter);
+      text_.replace(index,1,1,letter);
   }
   else
   {
-      text.replace(index,1,1,'@');
+      text_.replace(index,1,1,'@');
   }
   
 }

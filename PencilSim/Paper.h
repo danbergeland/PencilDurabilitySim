@@ -33,7 +33,7 @@ public:
      
 private:
     //text on the paper
-    std::string text;
+    std::string text_;
     //add_letter inserts letters into spaces and obscures existing characters.
     void add_letter(int index, char letter);
 };
