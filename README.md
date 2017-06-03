@@ -17,7 +17,7 @@ Open a terminal for the root directory of the repository.
 
 First, run the "getCatch.sh" script.  This clones the Catch test framework into the source directory.
 
-After Catch has been added, run "./build.sh" or make -f Makefile
+After Catch has been added, run "./build.sh" or make -f MakefileBuild
 
 The built program will be placed at PencilSim/Debug/PencilSim relative to the repository root.
 
